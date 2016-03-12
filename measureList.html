@@ -1,0 +1,414 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <title>计量帐单</title>
+    <meta name="data-spm" content="5176"/>
+    <meta name="description" content="阿里云"/>
+    <meta name="keywords" content="阿里云"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="//www.aliyun.com/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="http://static.aliyun.com/??css/www-knight/dpl/dpl.css,css/user-center/user-center/uc-head.css,css/user-center/user-center/uc-layout.css,css/www-knight/dpl/widget/footer.css" />
+    <link rel="stylesheet" type="text/css" href="http://static-img2.cdn.aliyuncs.com/??css/www-summerwind/shared.css,css/www-summerwind/base.css,css/user-center/base.css,css/user-center/cp.css,css/common/alipw_skin.css,css/user-center/account.css,css/aliyun_pay.css?v=201212202136" />
+
+    <script type="text/javascript" src="http://static-img3.cdn.aliyuncs.com/js/lib/alipw/classes/alipw-base.js?v=temp_1206"></script>
+    <script type="text/javascript" src="http://static-img3.cdn.aliyuncs.com/??js/common/alipw_config.js,js/www-summerwind/common.js,js/common/CommonUtils.class.js,js/user-center/account_balance_warning.js?v=201212202136"></script>
+    <script src="http://static.aliyun.com/??js/lib/alipw/baselib/baselib-all.js,js/user-center/user-center/uc-head.js,js/user-center/user-center/uc-layout.js"></script>
+    <!--[if lte IE 8]>
+    	<script src="http://static.aliyun.com/js/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://static-img3.cdn.aliyuncs.com/??js/user-center/jquery.cssforms-beta.js,js/user-center/jquery.datepicker.js?v=201212202136"></script>
+    <script src="http://a.tbcdn.cn/s/aplus_v2.js"></script>
+
+    
+</head>
+
+<body class="page-account" data-spm="7034461"><script type="text/javascript">
+(function (d) {
+var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=&aplus&yunid=%22feilongzaitian%40163%2ecom%22");
+t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script>
+
+<style>
+body{font-family: "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", "\5B8B\4F53";}
+</style>
+<div class="uc-content">
+	<script type="text/javascript">
+$(function(){
+	$('#datepicker').datepicker([$('#start_time').val(), $('#end_time').val()], function(date) {
+		if(date.length > 1){
+			$('#start_time').val(date[0]);
+			$('#end_time').val(date[1]);
+		}
+		else{
+			$('#start_time').val(date[0]);
+			$('#end_time').val(date[0]);
+		}
+});
+setSelect("product_code","ecs3");
+setSelect("bill_status","");
+$('#product_code,#bill_status').cssSelect(); 
+	
+$('#search-btn,#page-btn').click(function(){
+		  location.href = "measureList.htm?" + getParam();
+  		return false;
+  	});
+  $('a[name="toLink"]').click(function(e){
+    e.preventDefault();
+    var id = $(this).attr('data');
+    var param = getParam();
+    location.href = "measureDetail.htm?id=" + id + "&back_url=" + encodeURIComponent(param);
+    return false;
+  });
+});
+
+function getParam() {
+	var param;
+  if($('#bill_id').val()){
+    param = "id=" + $('#bill_id').val();
+  }else{
+    param = "code=" + $('#product_code').val();
+    param += "&status=" + $('#bill_status').val();
+    param += "&start=" + $('#start_time').val();
+    param += "&end=" + $('#end_time').val();
+    if ($('#page_number').val()) {
+      param += "&page=" + $('#page_number').val();
+    }
+
+  } 
+  return param;
+}
+  
+function setSelect(objID, newValue) {
+    var obj = $("#" + objID);
+    if (!obj) {
+        return;
+    }
+
+    var options = obj.find("option");
+    options.each(function (i) {
+        if ($(this).val() === newValue) {
+			obj.get(0).selectedIndex = i
+        }
+    });
+}
+
+function UrlEncode(str){
+   var ret="";
+   var tt="";
+   var strSpecial="!\"#$%&'()*+,/:;<=>?[]^`{|}~%";
+   for(var i=0;i<str.length;i++){
+    var chr = str.charAt(i);
+     var c=str2asc(chr);
+     tt += chr+":"+c+"n";
+    if(parseInt("0x"+c) > 0x7f){
+       ret+="%"+c.slice(0,2)+"%"+c.slice(-2);
+     }else{
+       if(chr==" ")
+         ret+="+";
+       else if(strSpecial.indexOf(chr)!=-1)
+         ret+="%"+c.toString(16);
+       else
+         ret+=chr;
+     }
+   }
+   return ret;
+}
+
+Alipw.onReady(function () {
+	$('#export-cvs').click(function(e) {
+		e.preventDefault();
+		var html = '<iframe frameBorder="0" width="760" height="358" src="http://billing.aliyun.com/oms/omsExport.htm" scrolling="no" border="0" style="border:none;">';
+		var config = {
+		  width:800,
+		  height:420,
+		  closeAction:'hide',
+		  modal:true,
+		  title:'导出使用记录'
+		};
+		var _dialog = new window.Alipw.Window(config);
+			_dialog.appendChild( html );
+	});
+});
+</script>
+
+<style>
+  .calendar td,.calendar th{
+    padding:0 !important;
+    border-top:none !important;
+  }
+  .calendar th{
+    background:none !important;
+  }
+  .table-header{
+    background:url(http://static-img2.cdn.aliyuncs.com/images/user-center/tabs-bg.png) repeat-x;
+    height:38px;
+    line-height:38px;
+    font-size:14px;
+    padding-left:8px;
+  }
+  .nodata{
+    margin-top:60px;
+    margin-bottom: 60px;
+    margin-left:0px;
+    background:url(http://img04.taobaocdn.com/tps/i4/T1xY8vFb8aXXbe.mPe-40-40.png) no-repeat left center;
+    padding-left:55px;
+  }
+  #tableheader{
+    line-height:18px;
+  }
+  #content{
+    position:relative;
+  }
+  #export-cvs{
+    position:absolute;
+    width:27px;
+    height:104px;
+    top:22px;
+    right:0;
+    margin-right:-26px;
+    background:url(http://img02.taobaocdn.com/tps/i3/T1YfJLFm8cXXbkgVbx-27-104.png) no-repeat;
+  }
+</style>
+
+
+<!-- 页头 S -->
+<script>if(!window.KISSY){document.write('<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js"><\/script>');}</script>
+<!-- 页头 S -->
+<div class="hd-simple" data-spm="1996641937">
+  <div class="y-row hd-layer">
+    <div class="y-span3">
+      <a class="aliyun-logo" href="http://www.aliyun.com/" title="打造数据分享第一平台" target="_blank" hidefocus>
+        <!--[if (lt IE 9)]>
+                <div style="margin-right: 5px;display: inline-block;*display:inline;*zoom:1;width: 20px;height: 20px;background-image: url(http://gtms01.alicdn.com/tps/i1/T1vUL_FcheXXcu5FDa-20-20.png) no-repeat center center;"></div> 
+            <![endif]-->
+            <![if (!IE)|(gte IE 9)]>
+                <i class="icon-logo2" title="阿里云"></i>
+            <![endif]> 
+                <span>打造数据分享第一平台</span>
+      </a>
+    </div>
+    <div class="y-span9 y-last">
+      <a class="lnk-search" href="javascript:;" title="搜索" target="_self" hidefocus><i class="icon-Search"></i></a>
+      <a class="lnk-email" href="http://mail.aliyun.com/" title="云邮箱登录" target="_blank" hidefocus>云邮箱登录</a>
+      <span class="li-spacing"></span>
+      <a class="lnk-act" href="http://www.aliyun.com/act/webbaindex.html" title="备案" target="_blank" hidefocus>备案</a>
+      <span class="li-spacing"></span>
+      <a class="lnk-renewals" href="http://buy.aliyun.com/renew/ecs" title="续费" target="_blank" hidefocus>续费</a>
+      <span class="li-spacing"></span>
+      <a class="lnk-try" href="http://promotion.aliyun.com/act/aliyun/newuser_null.html" target="_blank" data-ga="导航.顶通.新手任务"><span class="icon icon-giving" style="margin-right:3px;font-size:16px;vertical-align:text-top;color:#ddcc62;"></span>新手任务</a>
+	  <span class="li-spacing"></span>
+      <a class="lnk-try" href="http://try.aliyun.com/" title="免费试用" target="_blank" hidefocus>免费试用</a>
+      <span class="li-spacing"></span>
+      <a class="lnk-message load-hide y-hide" href="//message.aliyun.com/pm" target="_blank" title="站内信" hidefocus>
+        0
+      </a>
+      <div class="aliyun-user y-hide">
+        <a class="lnk-user load-hide" href="http://i.aliyun.com" hidefocus>
+          <span><span class="user-uid">AliyunUser</span></span>
+
+          <i></i>	    		
+        </a>
+        <div class="user-list">
+          <ul>
+            <li>
+              <a href="http://console.aliyun.com/" title="" target="_blank" hidefocus>管理控制台</a>
+            </li>
+            <li>
+              <a href="javascript:;" title="" target="_self" hidefocus>退出</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="aliyun-login y-hide">
+        <a class="lnk-reg load-hide" href="javascript:;" target="_self" hidefocus>
+          <span>注册</span>	    		
+        </a>
+        <span class="li-spacing"></span>
+        <a class="lnk-login load-hide" href="javascript:;" target="_self" hidefocus>
+          <span>登录</span>	    		
+        </a>
+      </div>
+      <div class="aliyun-search">
+        <div class="search-box">
+          <form class="frm-search" action="http://www.aliyun.com/s" target="_blank">
+            <input class="txt-search input-blur" data-default="搜索" name="k" maxlength="140" value="搜索" />
+            <button class="btn-search" type="submit">
+              <i class="search-arrow"></i>
+              <i class="search-tube"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--[if lte IE 7]><script src="http://static-img3.cdn.aliyuncs.com/js/www-knight/dpl/iconfont-ie7.js?v=1397217118" charset="utf-8"></script><![endif]--><!-- 页头 E -->
+
+        <div class="uc-nv" data-spm="1996032021">
+    <div class="y-row uc-layer">
+        <div class="y-span3">
+            <h1 class="uc-title" title="阿里云－用户中心">用户中心</h1>
+            <a class="lnk-www-uesr-center" href="http://www.net.cn/core/customer/index" title="万网用户中心" hidefocus>去万网用户中心</a>
+        </div>
+        <div class="y-span9 y-last">
+            <div class="uc-nav-list">
+                <ul>
+                    <li>
+                        <a class="nav-aftersalessupport" href="workorder.html" target="_self" title="售后支持" hidefocus>售后支持</a>
+                    </li>
+                    <li>
+                        <a class="nav-recordmanagement  " href="bsn.html" target="_self" title="备案管理" hidefocus>备案管理</a>
+                    </li>
+                    <li>
+                        <a class="nav-myservice  " href="renew_ecs.html" target="_self" title="我的服务" hidefocus>我的服务</a>
+                    </li>
+                    <li>
+                        <a class="nav-consumerrecords   current " href="order.html" target="_self" title="消费记录" hidefocus>消费记录</a>
+                    </li>
+                    <li>
+                        <a class="nav-accountmanagement " href="account.html" target="_self" title="账户管理" hidefocus>账户管理</a>
+                    </li>
+                    <li>
+                        <a class="nav-userinfo " href="profile.html" target="_self" title="会员信息" hidefocus>会员信息</a>
+                    </li>
+                    <li>
+                        <a class="nav-index" href="index.html" target="_self" title="用户中心首页" hidefocus>首页</a>
+                    </li>
+                </ul>
+                <div class="uc-current-light uc-current-light-hide"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uc-bd">
+<div class="y-row uc-layer">
+  <div class="y-span2">
+    <div class="uc-menu">
+    <div class="menu-box">
+    <div class="menu-title">消费记录</div>
+                            <div class="menu-options">
+                <a class="menu-options-title  " href="order.html" target="_self" hidefocus>订单 
+                </a>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                <div class="menu-options">
+                <a class="menu-options-title    current " href="measureList.html" target="_self" hidefocus>账单 
+                </a>
+                            </div>
+            <div class="menu-options-hr"></div>
+            </div>    </div>
+  </div>
+
+
+<div id="main">
+ <div id="content" style="width:810px" class="mt20">
+
+  <!-- 导出账单-->
+  <a id="export-cvs" href="javascript:void(0)" ></a>
+  <!-- 计量帐单-->
+  <div class="uitopb uitopb-border">
+    <div class="uitopb-header"><h3>计量账单</h3></div>
+    <div class="uitopb-bottom pd10 clearfix" data-spm="1996032237">
+      <select id="product_code" name="product_code">
+                <option value="ecs3" >云服务器(固定带宽)</option>   
+                <option value="ecs4" >云服务器(带宽按流量)</option>   
+                <option value="oss" >开放存储服务OSS</option>   
+                <option value="rds" >关系型数据库RDS</option>   
+                <option value="slb" >负载均衡SLB</option>   
+                <option value="cdn" >内容分发网络CDN</option>   
+                <option value="ocs" >开放缓存服务OCS</option>   
+              </select>
+
+      <select id="bill_status" name="bill_status">
+        <option value="">支付状态</option>
+        <option value="0">待支付</option>
+        <option value="2">已支付</option>
+        <option value="1">已欠费</option>
+      </select>
+
+      <input id="start_time" type="hidden" name="start_time" value="2014-05-01">
+      <input id="end_time" type="hidden" name="end_time" value="2014-05-22">
+      <div id="datepicker" class="left mr10"></div>
+      <input id="bill_id" type="text" class="fm-text left mt0 mr5" value="" placeholder="账单编号"/>
+
+      <a id="search-btn" href="#" class="left btn btn-white" data-lingjian="aliyun.55.2.1">
+        <span>搜索</span>
+      </a>
+    </div>
+    <div id="order-list" style="display: block;" class="tabledv">
+
+    <table>
+      <tbody>
+      <tr>
+        <th width="15%" class="taleft">账单编号</th>
+        <th width="23%" class="taleft">计费时段</th>
+        <th width="21%" class="taleft">产品名称</th>
+        <th width="16%" class="taleft">应付金额</th>
+        <th width="15%" class="taleft">支付状态</th>
+        <th width="10%" class="taleft">操作</th>
+      </tr>
+
+              <tr class="alt"><td class="tacenter" colspan="6" style="padding:20px;"><span class="ico ico-warning">没有找到相关数据!</span></td></tr>
+      
+
+                  </tbody>
+    </table>
+  </div>
+  <div class="pagenav taright">
+      </div>
+
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="uc-ft">
+	<div class="copyright-100 knight-footer">
+  <div class="y-row copyright">
+    <p class="big"><a href="http://www.aliyun.com/about" target="_blank">关于我们</a><a href="http://www.aliyun.com/law" target="_blank">法律声明</a><a href="http://www.aliyun.com/links" target="_blank">友情链接</a><span style="display:inline-block; *display:inline; *zoom:1;" id="google_translate_element"></span></p>
+    <p><a href="http://page.1688.com/shtml/about/ali_group1.shtml" target="_blank">阿里巴巴集团</a><a href="http://www.alibaba.com/" target="_blank">阿里巴巴国际站</a><a href="http://www.1688.com/" target="_blank">阿里巴巴中国站</a><a href="http://www.aliexpress.com/" target="_blank">全球速卖通</a><a href="http://www.taobao.com/" target="_blank">淘宝</a><a href="http://www.tmall.com/" target="_blank">天猫</a><a href="http://ju.taobao.com/" target="_blank">聚划算</a><a href="http://www.etao.com/" target="_blank">一淘</a><a href="http://www.alimama.com/" target="_blank">阿里妈妈</a><a href="//trip.taobao.com" target="_blank">淘宝旅行</a> <a href="//www.xiami.com" target="_blank">虾米</a><a href="http://www.aliyun.com/" target="_blank">阿里云计算</a><a href="http://www.yunos.com/" target="_blank">云OS</a><a href="http://www.net.cn/" target="_blank">万网</a><a href="http://www.alipay.com/" target="_blank">支付宝</a><a href="http://www.laiwang.com/" target="_blank">来往</a></p>
+    <p>&copy; 2014 Aliyun.com 版权所有 ICP证：浙B2-20080101</p>
+    <p><a href="http://122.224.75.236/wzba/login.do?spm=5176.383338.0.0.l0hKeT&amp;method=hdurl&amp;doamin=http://www.aliyun.com/&amp;id=330108000016033&amp;SHID=1223.0AFF_NAME=com.rouger.gs.main.UserInfoAff&amp;AFF_ACTION=qyhzdetail&amp;PAGE_URL=ShowDetail" target="_blank" data-spm-anchor-id="5176.383338.0.0" class="img img-1"></a><a href="http://www.aliyun.com/djcp" target="_blank" class="img img-2"></a></p>
+  </div>
+</div>
+<script src="
+http://static-img2.cdn.aliyuncs.com??js/www-knight/components/cloud_helper/cloud_helper.js,js/www-knight/dpl/data-statistics.js?v=1397217118" charset="utf-8"></script>
+<!--[if lte IE 7]><script src="http://static-img3.cdn.aliyuncs.com/js/www-knight/dpl/iconfont-ie7.js?v=1397217118"></script><![endif]-->
+
+
+<script type="text/javascript">
+function __googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+(function(){
+  var url = window.location.href;
+  if(url.match(/source\=multilingual/)){
+    document.cookie = '__source_multilingual=true; domain=aliyun.com;path=/;';
+  }
+  var cookie = document.cookie;
+  if(cookie.match(/__source_multilingual\=true/)){
+    render();
+  }
+  function render(){
+  	setTimeout(function(){
+  		var script = document.createElement('script');
+  		script.type = "text/javascript";
+  		script.src = "//translate.google.com/translate_a/element.js?cb=__googleTranslateElementInit";
+  		document.body.appendChild(script);
+  	},1000);
+  }
+})();
+</script></div>
+ 
+</div>
+</body>
+</html>

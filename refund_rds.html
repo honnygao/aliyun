@@ -1,0 +1,280 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta charset="utf-8" />
+<title>阿里云·弹性计算</title>
+<meta name="data-spm" content="5176"/>
+<meta
+	content="云计算平台,云应用开发,云计算,开发者,弹性计算,云服务器,服务器,云存储,存储,负载均衡,数据库,MySQL,关系型数据库,cloud api,开放存储,Open Storage Service,Load Balance,database,Relational Database,OSS,数据分析,数据处理,海量,数据,精准内容分析"
+	name="keywords" />
+<meta content="开发者云计算" name="description" />
+<link rel="shortcut icon" href="http://www.aliyun.com/favicon.ico"
+	type="image/x-icon" />
+</head>
+
+
+<body class="page-account" data-spm=""><script type="text/javascript">
+(function (d) {
+var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=&aplus&yunid=%22feilongzaitian%40163%2ecom%22");
+t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script>
+
+	<link rel="stylesheet" href="http://static.aliyun.com//??css/www-knight/dpl/dpl.css,css/user-center/user-center/uc-head.css,css/user-center/buy/uc-buy-nav.css,css/www-knight/dpl/widget/footer.css" />
+<script src="http://static.aliyun.com//??js/lib/alipw/baselib/baselib-all.js,js/user-center/user-center/uc-head.js"></script>
+
+	<script>if(!window.KISSY){document.write('<script src="http://g.tbcdn.cn/kissy/k/1.4.1/seed-min.js"><\/script>');}</script><!-- 页头 S --><div class="hd-simple" data-spm="1996641937">  <div class="y-row hd-layer">    <div class="y-span3">      <a class="aliyun-logo" href="http://www.aliyun.com/" title="打造数据分享第一平台" target="_blank" hidefocus>        <!--[if (lt IE 9)]>                <div style="margin-right: 5px;display: inline-block;*display:inline;*zoom:1;width: 20px;height: 20px;background-image: url(http://gtms01.alicdn.com/tps/i1/T1vUL_FcheXXcu5FDa-20-20.png) no-repeat center center;"></div>             <![endif]-->            <![if (!IE)|(gte IE 9)]>                <i class="icon-logo2" title="阿里云"></i>            <![endif]>                 <span>打造数据分享第一平台</span>      </a>    </div>    <div class="y-span9 y-last">      <a class="lnk-search" href="javascript:;" title="搜索" target="_self" hidefocus><i class="icon-Search"></i></a>      <a class="lnk-email" href="http://mail.aliyun.com/" title="云邮箱登录" target="_blank" hidefocus>云邮箱登录</a>      <span class="li-spacing"></span>      <a class="lnk-act" href="http://www.aliyun.com/act/webbaindex.html" title="备案" target="_blank" hidefocus>备案</a>      <span class="li-spacing"></span>      <a class="lnk-renewals" href="http://buy.aliyun.com/renew/ecs" title="续费" target="_blank" hidefocus>续费</a>      <span class="li-spacing"></span>      <a class="lnk-try" href="http://promotion.aliyun.com/act/aliyun/newuser_null.html" target="_blank" data-ga="导航.顶通.新手任务"><span class="icon icon-giving" style="margin-right:3px;font-size:16px;vertical-align:text-top;color:#ddcc62;"></span>新手任务</a>	  <span class="li-spacing"></span>      <a class="lnk-try" href="http://try.aliyun.com/" title="免费试用" target="_blank" hidefocus>免费试用</a>      <span class="li-spacing"></span>      <a class="lnk-message load-hide y-hide" href="//message.aliyun.com/pm" target="_blank" title="站内信" hidefocus>        0      </a>      <div class="aliyun-user y-hide">        <a class="lnk-user load-hide" href="http://i.aliyun.com" hidefocus>          <span><span class="user-uid">AliyunUser</span></span>          <i></i>	    		        </a>        <div class="user-list">          <ul>            <li>              <a href="http://console.aliyun.com/" title="" target="_blank" hidefocus>管理控制台</a>            </li>            <li>              <a href="javascript:;" title="" target="_self" hidefocus>退出</a>            </li>          </ul>        </div>      </div>      <div class="aliyun-login y-hide">        <a class="lnk-reg load-hide" href="javascript:;" target="_self" hidefocus>          <span>注册</span>	    		        </a>        <span class="li-spacing"></span>        <a class="lnk-login load-hide" href="javascript:;" target="_self" hidefocus>          <span>登录</span>	    		        </a>      </div>      <div class="aliyun-search">        <div class="search-box">          <form class="frm-search" action="http://www.aliyun.com/s" target="_blank">            <input class="txt-search input-blur" data-default="搜索" name="k" maxlength="140" value="搜索" />            <button class="btn-search" type="submit">              <i class="search-arrow"></i>              <i class="search-tube"></i>            </button>          </form>        </div>      </div>    </div>  </div></div><!--[if lte IE 7]><script src="http://static-img3.cdn.aliyuncs.com/js/www-knight/dpl/iconfont-ie7.js?v=1397217118" charset="utf-8"></script><![endif]-->
+	<script type="text/javascript"
+		src="http://static-img3.cdn.aliyuncs.com/js/lib/alipw/classes/alipw-base.js?v="></script>
+
+	<link rel="stylesheet" type="text/css"
+		href="http://static-img2.cdn.aliyuncs.com/??css/user-center/module/uc-button.css,css/user-center/module/uc-page-tab.css,css/user-center/module/uc-process.css,css/user-center/module/uc-table.css,css/user-center/module/uc-select.css,css/user-center/module/uc-ploy.css?v=" />
+	<link rel="stylesheet" type="text/css"
+		href="http://static-img2.cdn.aliyuncs.com/??css/new-common/iconfont/style.css,css/user-center/base.css,css/common/alipw_skin.css,css/user-center/module/reset.css,css/user-center/renewals/list.css?v=" />
+	<script type="text/javascript"
+		src="http://static-img3.cdn.aliyuncs.com/??js/user-center/module/uc.js,js/user-center/module/uc-select.js?v="></script>
+
+
+	<link rel="stylesheet"
+		href="http://static.aliyun.com/??css/user-center/user-center/uc-base.css,css/user-center/user-center/uc-head.css,css/user-center/user-center/uc-layout.css" />
+	<script
+		src="http://static.aliyun.com/??js/lib/alipw/baselib/baselib-all.js,js/user-center/user-center/uc-head.js,js/user-center/user-center/uc-layout.js"></script>
+
+	<div class="nav-beian nav-apply">		
+<!-- <div class="awsw-subchannel-header">
+<div class="subchannel-container">
+<a class="subchannel-aliyun-logo" href="" title="阿里云">阿里云</a>
+<a class="subchannel-logo" href="" title="用户中心">用户中心</a>
+</div>
+</div>
+<div id="nav" class="container">
+	${content}</div>
+ -->
+
+
+<!-- 登陆导航 -->
+
+<!-- 导航 S -->
+	        <div class="uc-nv" data-spm="1996032021">
+    <div class="y-row uc-layer">
+        <div class="y-span3">
+            <h1 class="uc-title" title="阿里云－用户中心">用户中心</h1>
+            <a class="lnk-www-uesr-center" href="http://www.net.cn/core/customer/index" title="万网用户中心" hidefocus>去万网用户中心</a>
+        </div>
+        <div class="y-span9 y-last">
+            <div class="uc-nav-list">
+                <ul>
+                    <li>
+                        <a class="nav-aftersalessupport" href="workorder.html" target="_self" title="售后支持" hidefocus>售后支持</a>
+                    </li>
+                    <li>
+                        <a class="nav-recordmanagement  " href="bsn.html" target="_self" title="备案管理" hidefocus>备案管理</a>
+                    </li>
+                    <li>
+                        <a class="nav-myservice   current " href="renew_ecs.html" target="_self" title="我的服务" hidefocus>我的服务</a>
+                    </li>
+                    <li>
+                        <a class="nav-consumerrecords  " href="order.html" target="_self" title="消费记录" hidefocus>消费记录</a>
+                    </li>
+                    <li>
+                        <a class="nav-accountmanagement " href="account.html" target="_self" title="账户管理" hidefocus>账户管理</a>
+                    </li>
+                    <li>
+                        <a class="nav-userinfo " href="profile.html" target="_self" title="会员信息" hidefocus>会员信息</a>
+                    </li>
+                    <li>
+                        <a class="nav-index" href="index.html" target="_self" title="用户中心首页" hidefocus>首页</a>
+                    </li>
+                </ul>
+                <div class="uc-current-light uc-current-light-hide"></div>
+            </div>
+        </div>
+    </div>
+</div><!-- 导航 E -->
+
+
+
+
+
+
+</div>
+
+	<!-- 侧边栏 -->
+	<div class="uc-bd">
+		<div class="y-row uc-layer">
+			
+<div class="y-span2">
+
+	<div class="uc-menu" data-spm="">
+	 		<div class="menu-box">
+    <div class="menu-title">我的服务</div>
+                            <div class="menu-options">
+                <a class="menu-options-title  " href="renew_ecs.html" target="_self" hidefocus>续费管理 
+                </a>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                <div class="menu-options">
+                <a class="menu-options-title  " href="refund_refund.html" target="_self" hidefocus>退订管理 
+                </a>
+                                    <div class="menu-items">
+                                                                                    <a class="menu-items-title  current " href="refund_refund.html" target="_self" hidefocus>五天无理由退款</a>
+                                                                                                                <a class="menu-items-title " href="refundList.html" target="_self" hidefocus>退订记录</a>
+                                                                        </div>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                                        <div class="menu-options">
+                <a class="menu-options-title  " href="http://market.aliyun.com/user/subscription/index.htm" target="_self" hidefocus>工具与镜像 
+                </a>
+                                    <div class="menu-items">
+                                                                                    <a class="menu-items-title " href="http://market.aliyun.com/user/subscription/index.htm" target="_self" hidefocus>已订阅的镜像</a>
+                                                                                                                <a class="menu-items-title " href="http://fuwu.aliyun.com/user/order_biz_index.htm" target="_self" hidefocus>工具与服务</a>
+                                                                        </div>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                <div class="menu-options">
+                <a class="menu-options-title  " href="http://message.aliyun.com/pm" target="_self" hidefocus>消息中心 
+                </a>
+                                    <div class="menu-items">
+                                                                                    <a class="menu-items-title " href="http://message.aliyun.com/pm" target="_self" hidefocus>站内信</a>
+                                                                                                                <a class="menu-items-title " href="http://dynamic.aliyun.com/" target="_self" hidefocus>故障信息</a>
+                                                                                                                <a class="menu-items-title " href="http://bbs.aliyun.com/message.php?type=sms&action=unread" target="_self" hidefocus>论坛信息</a>
+                                                                                                                <a class="menu-items-title " href="http://msc.aliyun.com/" target="_self" hidefocus>消息订阅</a>
+                                                                        </div>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                <div class="menu-options">
+                <a class="menu-options-title  " href="http://i.aliyun.com/access_key" target="_self" hidefocus>安全认证 
+                </a>
+                            </div>
+            <div class="menu-options-hr"></div>
+                                    </div> </div>
+</div>
+
+
+
+			<div class="y-span10 y-last">
+				<div class="uc-content">
+					<div class="mt20 clearfix" id="main">        <link rel="stylesheet" href="http://static.aliyun.com/??css/user-center/module/uc-process.css,css/user-center/module/uc-page-tab.css,css/user-center/module/uc-button.css,css/user-center/user-center/refund/refund.css,css/user-center/user-center/refund/select.css" />
+		
+			    	<div class="uc-content">
+				    	<!-- S -->
+				    	
+			    	    <!-- 流程 S -->
+                        <div class="uc-process mt20">
+                	            <span class="unit current w264">第1步，选择实例</span>
+                	            <span class="arrow-current">
+                		            <span class="next"></span>
+                			        <span class="prev"></span>
+                	            </span>
+                	            <span class="unit w264">第2步，确认退款信息</span>
+                	            <span class="arrow">
+                		            <span class="next"></span>
+                			        <span class="prev"></span>
+                	            </span>
+                	            <span class="unit w265">第3步，申请提交待审核</span>
+                            </div>
+                        <!-- 流程 E -->
+                        
+                        <!-- tab S -->
+                        <div class="uc-page-tab uc-page-tab-s mt20">
+        	            	<ul>
+        		            	<li >
+        		            		<a href="refund_refund.html" target="_self" hidefocus>云服务器ECS</a>
+        		            	</li>
+        		            	<li   class="current" >
+        		            		<a href="refund_rds.html" target="_self" hidefocus>关系型数据库RDS</a>
+        		            	</li>
+        	            	</ul>
+        	            </div>
+                        <!-- tab E -->
+                        
+                        <!-- info S -->
+                        <div class="refund-info mt20 y-clearfix">
+                            <i class="icon-info"></i>
+                            <div class="info-box">
+                                <div>5天无理由退款说明（ RDS ）</div>
+                                <div class="info-text">a.新购或试用开始（需转正）5天内可申请无理由退款。</div>
+																<div class="info-text">b.每个用户关系型数据库RDS限最多退款 1 次，最多累积可退 1 台。</div>	
+								                                <div class="info-text">c.退还实付金额，已使用的代金券不退还。</div>
+                                <div class="info-text">
+                                    <a href="http://help.aliyun.com/view/11108128_13440417.html" target="_blank" class="lnk y-pull-right mr10" hidefocus>查看详情</a>
+                                    <span>d.活动期购买的 关系型数据库RDS 申请5天无理由退款后，赠品（代金券、延长服务期等）将作废清零。</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- info E -->
+                        
+                        <!-- box S -->
+                        <div class="refund-box">		
+                            <div class="refund-title">请选择您需要退订的 关系型数据库RDS ：</div>
+							
+							                            <div class="tip-bang">
+                                <i class="icon-bang"></i>
+                                <div class="bang-text">您已成功退订 0 台 RDS ，目前只能选择不超过 1 台的 RDS  进行退订操作。</div>
+                            </div>
+															<form class="form-refund" target="_self" action="refundConfirm" method="post">
+								 <input name='_csrf_token' type='hidden' value='AqUTZAynB981tubfi3ckU4'>
+								<input type="hidden" name="action" value="renew/RefundConfirmAction"/>
+								<input type="hidden" value="yes" name="event_submit_do_confirm" />							
+								<input type="hidden" value="RDS" name="type" />		
+                                <table class="refund-list">
+                                    <tr>
+                                        <th width="1%"></th>
+                                        <th>5天内购买的 关系型数据库RDS </th>
+                                        <th>节点</th>
+										                                         <th>状态</th>
+                                        <th>创建时间</th>
+                                        <th width="15%" class="align-right">可退金额</th>
+                                    </tr>
+									
+																			
+																		                           
+                                </table>
+                                <div class="btn-box mt20">
+                                    <button type="button" class="uc-button-disabled" disabled>提  交</button>
+                                </div>
+                            </form>
+                            
+
+                            
+                        </div>
+                        <!-- box E -->				    	
+				    	<!-- E -->
+			    	</div>
+    	<script type="text/javascript">
+    	
+        	KISSY.config({
+                packages:{
+                    'kloud': {
+                        base: 'http://g.tbcdn.cn/aliyun/kloud',
+                        tag: '2313',
+                        debug: false,
+                        ignorePackageNameInUri: true,
+                        combine: false
+                    }
+                }
+            }); 
+            
+            var ajaxRefundDetailsUrl = '/ajax/refundAjax/getRefundPrice.json';
+            var ajaxRefundPriceUrl = '/ajax/refundAjax/batchRefundPrice.json';
+            var refundMax = 1;
+            var refundUsed = 0;
+            
+        </script>	
+        
+        <script src="http://static.aliyun.com/js/user-center/user-center/refund/select.js"></script>						
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="uc-ft">
+	<div class="copyright-100 knight-footer">  <div class="y-row copyright">    <p class="big"><a href="http://www.aliyun.com/about" target="_blank">关于我们</a><a href="http://www.aliyun.com/law" target="_blank">法律声明</a><a href="http://www.aliyun.com/links" target="_blank">友情链接</a><span style="display:inline-block; *display:inline; *zoom:1;" id="google_translate_element"></span></p>    <p><a href="http://page.1688.com/shtml/about/ali_group1.shtml" target="_blank">阿里巴巴集团</a><a href="http://www.alibaba.com/" target="_blank">阿里巴巴国际站</a><a href="http://www.1688.com/" target="_blank">阿里巴巴中国站</a><a href="http://www.aliexpress.com/" target="_blank">全球速卖通</a><a href="http://www.taobao.com/" target="_blank">淘宝</a><a href="http://www.tmall.com/" target="_blank">天猫</a><a href="http://ju.taobao.com/" target="_blank">聚划算</a><a href="http://www.etao.com/" target="_blank">一淘</a><a href="http://www.alimama.com/" target="_blank">阿里妈妈</a><a href="//trip.taobao.com" target="_blank">淘宝旅行</a> <a href="//www.xiami.com" target="_blank">虾米</a><a href="http://www.aliyun.com/" target="_blank">阿里云计算</a><a href="http://www.yunos.com/" target="_blank">云OS</a><a href="http://www.net.cn/" target="_blank">万网</a><a href="http://www.alipay.com/" target="_blank">支付宝</a><a href="http://www.laiwang.com/" target="_blank">来往</a></p>    <p>&copy; 2014 Aliyun.com 版权所有 ICP证：浙B2-20080101</p>    <p><a href="http://122.224.75.236/wzba/login.do?spm=5176.383338.0.0.l0hKeT&amp;method=hdurl&amp;doamin=http://www.aliyun.com/&amp;id=330108000016033&amp;SHID=1223.0AFF_NAME=com.rouger.gs.main.UserInfoAff&amp;AFF_ACTION=qyhzdetail&amp;PAGE_URL=ShowDetail" target="_blank" data-spm-anchor-id="5176.383338.0.0" class="img img-1"></a><a href="http://www.aliyun.com/djcp" target="_blank" class="img img-2"></a></p>  </div></div><script src="http://static-img2.cdn.aliyuncs.com??js/www-knight/components/cloud_helper/cloud_helper.js,js/www-knight/dpl/data-statistics.js?v=1397217118" charset="utf-8"></script><!--[if lte IE 7]><script src="http://static-img3.cdn.aliyuncs.com/js/www-knight/dpl/iconfont-ie7.js?v=1397217118"></script><![endif]--><script type="text/javascript">function __googleTranslateElementInit() {  new google.translate.TranslateElement({pageLanguage: 'zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');}(function(){  var url = window.location.href;  if(url.match(/source\=multilingual/)){    document.cookie = '__source_multilingual=true; domain=aliyun.com;path=/;';  }  var cookie = document.cookie;  if(cookie.match(/__source_multilingual\=true/)){    render();  }  function render(){  	setTimeout(function(){  		var script = document.createElement('script');  		script.type = "text/javascript";  		script.src = "//translate.google.com/translate_a/element.js?cb=__googleTranslateElementInit";  		document.body.appendChild(script);  	},1000);  }})();</script></div>
+</body>
+</html>

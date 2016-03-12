@@ -1,0 +1,328 @@
+/* CSS Document */
+/*===============================cross site common style===============================*/
+/*
+The following names cannot be used for the root class name of the selector:
+aysw-inner
+aysw-left
+aysw-right
+aysw-wrap
+aysw-row
+aysw-current
+aysw-hover
+aysw-separator
+aysw-main
+aysw-logo
+aysw-disabled
+*/
+.aysw-pagewrap{ min-width:1000px; _width:expression((documentElement.clientWidth < 1000) ? "1000px" : "auto" ); text-align:center;}
+.aysw-announcement{ background: none repeat scroll 0 0 #FFFFCC; border: 1px solid #FFCC00; border-radius: 5px 5px 5px 5px; clear: both; margin: 10px auto 0; padding: 3px 0; text-align: center; width: 940px;}
+.aysw-announcement,
+.aysw-announcement a{ font:12px/18px "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, Verdana, "\5B8B\4F53"; color:#666666; text-align:center;}
+.aysw-announcement a{ color:#06C; text-decoration:none;}
+.aysw-announcement{ color:#F60;}
+.aysw-announcement a:hover{ text-decoration:underline;}
+
+.aysw-header{ font:12px/18px "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, Verdana, "\5B8B\4F53"; color:#666666; text-align:center; background:#FFF;}
+.aysw-header .aysw-main{ width:940px; margin:0 auto; padding:10px 10px; *zoom:1;}
+.aysw-header .aysw-main:after{clear:both;content:".";display:block;height:0;visibility:hidden; overflow:hidden;}
+.aysw-header .aysw-logo{ display:block; width:325px; float:left; height:60px; background:url(../../images/www-summerwind/logo.gif) left center no-repeat; margin:0;}
+.aysw-header-topnav{ position:relative; z-index:300; float:right; word-wrap:normal; white-space:nowrap; padding-top:20px;}
+.aysw-header-topnav a{ display:block; float:left; line-height:14px; height:14px; color:#262626; position:relative; background:#FFFFFF; padding:0 10px;}
+.aysw-header-topnav a.last{ border:none; padding-right:0;}
+.aysw-header-topnav ul{ margin:0;}
+.aysw-header-topnav ul li{ float:left; border-right:1px solid #D9D9D9; position:relative; margin-top:5px;}
+.aysw-header-topnav ul li.last{ border:none;}
+.aysw-header-topnav ul li.last a{ padding-right:0;}
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown-hover,
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown:hover{ margin-left:-1px; border:1px solid #F87B00; border-bottom:none; padding-top:4px; margin-top:0;}
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown-hover a,
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown:hover a{ z-index:2; height:20px; text-decoration:none;}
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown-hover .aysw-header-menu,
+.aysw-header-topnav ul li.aysw-header-topnav-dropdown:hover .aysw-header-menu{ display:block;}
+.aysw-header-topnav ul li .aysw-header-menu{ left:-1px; top:23px; z-index:1; border-top:1px solid #F87B00;}
+.aysw-header nav{ height:44px; clear:both; background:url(../../images/www-summerwind/sprite.png) 0 0 repeat-x; _background-image:url(../../images/www-summerwind/sprite.gif)}
+.aysw-header-nonav nav{ height:2px; overflow:hidden; font-size:0; line-height:0;}
+.aysw-header nav .aysw-inner{ margin:0 auto; width:940px; *zoom:1;}
+.aysw-header-nonav nav .aysw-inner{ display:none;}
+.aysw-header nav .aysw-inner:after{clear:both;content:".";display:block;height:0;visibility:hidden; overflow:hidden;}
+.aysw-header nav .aysw-header-nav-left{ margin:0; float:left;}
+.aysw-header nav .aysw-header-nav-left li a,
+.aysw-header nav .aysw-header-nav-left li a span,
+.aysw-header nav .aysw-header-nav-left li a em{ font-style:normal; display:block; float:left; cursor:pointer; background-image:url(../../images/www-summerwind/sprite.png); _background-image:url(../../images/www-summerwind/sprite.gif); background-position: -99999px -99999px; background-repeat:no-repeat;}
+.aysw-header nav .aysw-header-nav-left li{ display:block; float:left; z-index:10; margin-left:-1px; position:relative;}
+.aysw-header nav .aysw-header-nav-left li a{ display:block; font-size:14px; text-shadow:1px 1px 1px rgba(0,0,0,0.3); color:#FFF; font-weight:600; text-decoration:none; outline:none;}
+.aysw-header nav .aysw-header-nav-left li a:hover{ text-decoration:none;}
+.aysw-header nav .aysw-header-nav-left li a em{ padding:12px 25px; height:18px;}
+.aysw-header nav .aysw-header-nav-left li.aysw-separator{ width:1px; height:14px; margin-top:15px; padding:0; overflow:hidden; font-size:0; line-height:0; background:#FFCE80; z-index:1; position:relative; margin:15px 0 0 -1px;}
+.aysw-header nav .aysw-header-nav-left li.aysw-current,
+.aysw-header nav .aysw-header-nav-left li.aysw-hover,
+.aysw-header nav .aysw-header-nav-left li:hover{ position:relative; z-index:2px;}
+.aysw-header nav .aysw-header-nav-left li.aysw-current a,
+.aysw-header nav .aysw-header-nav-left li.aysw-hover a,
+.aysw-header nav .aysw-header-nav-left li:hover a{ padding-left:5px; background-position:left -44px; background-repeat:no-repeat; color:#F60; text-shadow:none;}
+.aysw-header nav .aysw-header-nav-left li.aysw-current a span,
+.aysw-header nav .aysw-header-nav-left li.aysw-hover a span,
+.aysw-header nav .aysw-header-nav-left li:hover a span{ padding-right:5px; background-position:right -44px; background-repeat:no-repeat;}
+.aysw-header nav .aysw-header-nav-left li.aysw-current a em,
+.aysw-header nav .aysw-header-nav-left li.aysw-hover a em,
+.aysw-header nav .aysw-header-nav-left li:hover a em{ background-position:0 -88px; background-repeat:repeat-x; height:17px; padding:14px 20px 12px 20px;}
+
+.aysw-header-nav-right{ float:right;}
+.aysw-header-nav-right i.line-1{ display:block; float:left; height:42px; width:2px; overflow:hidden; background:url(http://storage.aliyun.com/aliyun_portal_storage/1361244360_14_585.jpg) repeat 0 -59px; margin-right:10px;}
+.aysw-header-nav-right a{ padding:0 10px; float:left;font-size:13px; line-height:42px; text-shadow:1px 1px 1px rgba(0,0,0,0.3); color:#FFF; font-weight:600; text-decoration:none; outline:none; background:url("../../images/www-summerwind/sprite.png") repeat-x scroll 0 0 transparent}
+.aysw-header-nav-right a:hover{ opacity:0.8;filter:alpha(opacity=80); text-decoration:none;}
+.aysw-header a.aysw-header-cloudos{display:block; float:right; width:102px; height:42px; background:url(../../images/www-summerwind/sprite_big.gif?v=20121220) 0 0 no-repeat; overflow:hidden; text-indent:-99999px; outline:none;}
+.aysw-header a.aysw-header-cloudos:hover{opacity:0.8;filter:alpha(opacity=80);}
+
+.aysw-header nav .aysw-header-nav-left li.aysw-hover .aysw-header-menu,
+.aysw-header nav .aysw-header-nav-left li:hover .aysw-header-menu{ display:block;}
+.aysw-header-menu{ display:none; position:absolute; top:42px; left:1px; padding:0 15px 3px 15px; text-align:left; width:355px; background:#FFF; border:#F87B00 solid; border-width:0 1px 1px 1px;}
+.aysw-header-menu a{ display:inline!important; float:none!important; font-size:12px!important; line-height:18px!important; color:#06C!important; font-weight:normal!important; text-shadow:none!important; background:none!important; padding-left:0!important; padding:0!important;}
+.aysw-header-menu a:hover{ text-decoration:underline!important;}
+.aysw-header-menu a{ vertical-align:middle; *zoom:1;}
+.aysw-header-menu-channel{ clear:both; padding:10px 0; border-bottom:1px dotted #E5E5E5;}
+.aysw-header-menu-channel-last{ border-bottom:none;}
+.aysw-header-menu-channel span{ display:inline-block; *display:inline; *zoom:1; vertical-align:middle; width:95px; padding-left:10px;}
+.aysw-header-menu-channel p{ margin:0; display:inline-block; *display:inline; *zoom:1; vertical-align:middle; width:250px;}
+.aysw-header-menu-channel i{ display:inline-block; *display:inline; *zoom:1; font-size:0; overflow:hidden; line-height:0; width:1px; height:12px; margin:7px 0; background:#C8C8D0; margin:0 10px; vertical-align:middle;}
+.aysw-header-subnav{ clear:both; text-align:center; height:47px; background:url(../../images/www-summerwind/sprite.png) 0 -500px repeat-x; _background-image:url(../../images/www-summerwind/sprite.gif);  border-bottom:1px solid #D9D9D9;}
+.aysw-header-subnav .aysw-inner{ text-align:right; width:940px; margin:0 auto;}
+.aysw-header-subnav a{ display:inline-block; *display:inline; *zoom:1; margin-top:10px; color:#666; padding:6px 15px; height:14px; line-height:14px; border-radius:3px;}
+.aysw-header-subnav a:hover{ background:#E9EAEC; text-decoration:none;}
+.aysw-header-subnav a.aysw-current,.aysw-header-subnav a.aysw-current:hover{ background:url(../../images/www-summerwind/sprite.png) 0 -360px repeat-x; _background-image:url(../../images/www-summerwind/sprite.gif); color:#FFF; border-left:1px solid #6D7B97; border-right:1px solid #6D7B97; border-bottom:1px solid #6B7995; padding:6px 14px 5px 14px;}
+
+.aysw-header-help .aysw-logo{ background-image:url(../../images/www-summerwind/logo_help.gif); width:240px;}
+
+/*瀛愰閬撻〉澶� by xingyu.zhuxy*/
+.awsw-subchannel-header .subchannel-container{padding-top:25px; width:940px;margin:auto;text-align:left;height:66px;}
+.awsw-subchannel-header .subchannel-aliyun-logo{float:left;width:143px;height:41px;background:url(http://storage.aliyun.com/aliyun_portal_storage/1361424556_92_313.gif);text-indent:-1000px;}
+.awsw-subchannel-header .subchannel-aliyun-logo-https{float:left;width:143px;height:41px;background:url(https://storage.aliyun.com/aliyun_portal_storage/1361424556_92_313.gif);text-indent:-1000px;}
+.awsw-subchannel-header .subchannel-logo{color:#6f6f6f;margin-left:5px;font:20px/41px "Microsoft Yahei";font-weight:bold;text-decoration:none;outline:none;float:left;}
+.awsw-subchannel-header a:hover{text-decoration:none; outline:none;}
+/*瀵艰埅 update at 2013-04-07*/
+.ay-header{background-color:#fff;padding:25px 0}
+.ay-header .container{width:940px;margin:0 auto}
+.logo_full,.logo_home{font-size:0;line-height:0;cursor:pointer;text-indent:-100px;height:40px;float:left;background-repeat:no-repeat;background-position:left center;margin:0;padding:0}
+.logo_full{width:300px;background-image:url(http://oss.aliyuncs.com/aliyun_portal_storage/1366941558_62_570.png)}
+.logo_home{width:130px;background-image:url(http://oss.aliyuncs.com/aliyun_portal_storage/1366941586_30_134.png)}
+.logo_sub{width:100px;color:#777;text-decoration:none;height:40px;float:left;background-image:url(http://oss.aliyuncs.com/aliyun_portal_storage/1366941473_19_952.png);background-repeat:no-repeat;background-position:0 40px;text-indent:-200px;overflow:hidden}
+.logo_sub_usercenter{background-position:0 0;width:100px}
+.logo_sub_service{background-position:0 -40px;width:100px}
+.logo_sub_dev{background-position:0 -80px;width:115px}
+.logo_sub_cloudmarket{background-position:0 -120px;width:100px}
+.logo_sub_bbs{background-position: 0 -160px;width: 65px}
+.logo_sub_forget{background-position: 0 -200px; width: 100px}
+.logo_sub_help{background-position: 0 -240px; width: 100px}
+.ay-header-simple{border-bottom:2px solid #F89800}
+/*瀵艰埅 end*/
+
+.aysw-body{ margin:0 auto; width:940px; text-align:left;}
+.aysw-footer{ clear:both; font:12px/18px "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, Verdana, "\5B8B\4F53"; color:#666; border-top:5px solid #D8D8D8; text-align:center; margin-top:20px; padding:15px 0 32px 0; background:#EFEFEF; *zoom:1;}
+.aysw-footer a{ color:#06c; text-decoration:none;}
+.aysw-footer a:hover{ text-decoration:underline;}
+.aysw-footer .aysw-inner{ width:940px; margin:0 auto; text-align:left; overflow:hidden; *zoom:1;}
+.aysw-footer h1{ margin:0; font-size:12px; font-weight:bold; color:#333; height:28px; padding-top:4px;}
+.aysw-footer-directions{ width:550px; float:left;}
+.aysw-footer-flow{ width:499px; height:110px; padding-left:1px; overflow:hidden; background:url(../../images/www-summerwind/sprite_footer.gif) 0 5px no-repeat; margin-top:30px;}
+.aysw-footer-flow a{ display:block; float:left; width:49px; height:45px; margin:12px 62px 0 0; text-indent:-99999px; overflow:hidden; background:#FFF; opacity:0; filter:alpha(opacity=0);}
+.aysw-footer-flow a:hover{ opacity:0.2; filter:alpha(opacity=20);}
+.aysw-footer-supports{ float:left; width:390px; overflow:hidden; *zoom:1;}
+.aysw-footer-supports .aysw-left{ float:left; padding:15px 25px 15px 0; line-height:170%;}
+.aysw-footer-supports .aysw-right{ float:left; padding:15px 0; line-height:170%}
+.aysw-footer-livechat{ display:inline-block; *display:inline; *zoom:1; background:url(../../images/www-summerwind/sprite_footer.gif) 0 -170px no-repeat; width:86px; height:27px; text-indent:-99999px; overflow:hidden; vertical-align:middle;}
+.aysw-footer-livechat:hover{ opacity:0.8; filter:alpha(opacity=80);}
+.aysw-footer-copyright{ clear:both; padding-top:20px; text-align:center; line-height:27px;}
+.aysw-footer-copyright a{ color:#656565; *zoom:1; vertical-align:middle;}
+.aysw-footer-copyright i{ display:inline-block; *display:inline; *zoom:1; font-size:0; overflow:hidden; line-height:0; width:1px; height:12px; margin:7px 0; background:#C8C8D0; margin:0 10px; vertical-align:middle;}
+.aysw-footer-hr{ clear:both; background:#FBFBFB; border-top:1px solid #DFDFDF; display:block; height:1px; font-size:0; line-height:0; overflow:hidden;}
+.aysw-footer-section{ overflow:hidden; *zoom:1;}
+.aysw-footer-certificates{ text-align:center; padding-top:10px;}
+.aysw-footer-certificates a{ font-size:0; line-height:0; overflow:hidden; text-decoration:none;}
+.aysw-footer-certificates a:hover{ text-decoration:none;}
+.aysw-footer-certificates img{ margin:0 5px; vertical-align:middle; *zoom:1;}
+.aysw-footer-certificates a:hover img{ opacity:0.8; filter:alpha(opacity=80);}
+
+/* new footer */
+.aysw-footer-goldmetal-directions{ width:175px; float:left;}
+.aysw-footer-goldmetal-directions .aysw-left{ float:left; padding:10px 0 10px 0; line-height:200%;}
+.aysw-footer-goldmetal-supports{ float:left; width:125px; overflow:hidden; *zoom:1;}
+.aysw-footer-goldmetal-supports .aysw-left{ float:left; padding:10px 0 15px 0; line-height:200%;}
+.aysw-footer-goldmetal{ width:330px; float:left;}
+.aysw-footer-goldmetal-wrap{ border:1px dotted #CCC; border-width:0 1px 0 1px; margin:10px 70px;}
+.aysw-footer-goldmetal-img{ display:block; clear:both; width:130px; height:120px; margin:0 auto; background:url(../../images/www-summerwind/sprite_big.gif?v=20121220) -251px -90px no-repeat; text-indent:-10000px; overflow:hidden;}
+.aysw-footer-goldmetal-beian{ float:left; width:205px; overflow:hidden; *zoom:1;}
+.aysw-footer-goldmetal-beian .aysw-left{ float:left; padding:10px 0 15px 0; line-height:200%;}
+.aysw-footer-goldmetal-others{ float:left; width:105px; overflow:hidden; *zoom:1;}
+.aysw-footer-goldmetal-others .aysw-left{ float:left; padding:10px 0 15px 0; line-height:200%;}
+
+
+
+.aysw-quicksupport{ font:12px/18px "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, Verdana, "\5B8B\4F53"; color:#666666;; position:absolute; width:100px; z-index:200;}
+.aysw-quicksupport .aysw-disabled{ color:#666!important;}
+.aysw-quicksupport .aysw-disabled .icon-dialog2{ color:#999!important;}
+.aysw-quicksupport a{ color:#06c; text-decoration:none;}
+.aysw-quicksupport a:hover{ text-decoration:underline;}
+.aysw-quicksupport-header{ padding:5px; text-align:center; border:1px solid #F87B00; font-weight:bold; background:#FF9E00; color:#FFF;}
+.aysw-quicksupport-body{ padding:10px 3px; border:1px solid #E5E5E5; border-top:none; background:#FCFCFC;}
+.aysw-quicksupport h1{ margin:0; font-size:12px; font-weight:normal; text-align:left; padding-left:3px; padding-bottom:2px;}
+.aysw-quicksupport hr{ border:none; border-top:1px dotted #C9C9C9; margin:5px 0; display:block; *float:left; *margin-bottom:-9px; color:#FFF}
+.aysw-quicksupport a{ display:block; text-align:center;}
+.aysw-quicksupport a.btn{zoom:1;*display:inline;display:-moz-inline-stack;display:inline-block; color:#333333;}
+.aysw-quicksupport a .icon-dialog2{margin-right:3px;color:#ff6600; font-size:14px;}
+/*xingyu.zhuxy*/
+.aysw-quicksupport .btn-container{ text-align:center}
+.aysw-quicksupport-tel{ font-size:13px; display:block; font-family:Arial, Verdana; text-align:center; word-wrap:break-word; white-space:normal; padding:2px 0; color:#999;}
+.aysw-quicksupport a.aysw-quicksupport-livechatbtn{ display:block; clear:both; margin:3px 0 3px 3px; width:56px; height:19px; background-position:0 0; overflow:hidden; padding:4px 0 0 30px; color:#06C; line-height:15px;}
+.aysw-quicksupport-livechatbtn-disabled{ background-position:0 -24px!important; color:#999!important;}
+.aysw-quicksupport-livechatbtn:hover{ opacity:0.7; filter:alpha(opacity=70); text-decoration:none!important;}
+/*960 浼樺寲*/
+.aysw-quicksupport-mini .aysw-quicksupport-header{width:25px;height:96px;background:url(http://img04.taobaocdn.com/tps/i4/T1IyFlFi0dXXafsuvs-25-400.png) no-repeat left -200px;position:absolute;text-indent:-9999px;border:none;margin-left:-25px;cursor:pointer;padding:0}
+.aysw-quicksupport-body{border-color:#f87d00}
+.aysw-quicksupport-mini .aysw-quicksupport-body{border:1px solid #f87d00}
+.aysw-quicksupport-fold .aysw-quicksupport-body{display:none}
+.aysw-quicksupport-fold{width:0;margin-left:100px}
+.aysw-quicksupport-mini.hover .aysw-quicksupport-header,.aysw-quicksupport-header:hover{background-position:0 -300px}
+.aysw-quicksupport-fold .aysw-quicksupport-header{background-position:0 0}
+.aysw-quicksupport-fold.hover .aysw-quicksupport-header,.aysw-quicksupport-fold .aysw-quicksupport-header:hover{background-position:0 -100px}
+/*end*/
+
+.aysw-searchbar{ float:right; padding:5px 0 0 0; overflow:hidden; *zoom:1;}
+.aysw-searchbar input{ display:block; float:left; height:20px; width:200px; line-height:20px; font-size:14px; padding:5px 7px; border:1px solid #DE8300; color:#CCC;}
+.aysw-searchbar input.aysw-searchbar-focused{ color:#666;}
+.aysw-searchbar a{ display:block; float:left; height:20px; padding:5px 15px; background:url(../../images/www-summerwind/sprite.png) 0 -1860px repeat-x; border:1px solid #DE8300; border-left:none; color:#AB4C00;}
+.aysw-searchbar a:hover{ text-decoration:none; opacity:0.8; filter:alpha(opacity=80);}
+
+.aysw-gray{ color: #999!important;}
+
+
+
+
+/*0914 promotion
+.aysw-header .aysw-logo{ width:500px; height:100px; background-image:url(../../images/www-summerwind/logo_0914.png);}
+.aysw-header .aysw-main{ padding:10px 10px 6px 10px;}
+.aysw-ad-corner{ display:block; position:absolute; top:30px; right:0; _right:-1px; width:175px; height:116px;background:url(../../images/www-summerwind/ad_0914_corner.jpg) 0 0 no-repeat;}
+.aysw-ad-corner:hover{ background-position:0 -116px; outline:none;}
+.aysw-ad-corner-expanded{ background-position:0 -232px;}
+.aysw-ad-corner-expanded:hover{ background-position:0 -348px;}
+.aysw-ad-banner{ overflow:hidden; height:0; font-size:0; line-height:0; background:url(../../images/www-summerwind/ad_0914_banner_bg.jpg);}
+*/
+
+/*1111 promotion
+.aysw-header .aysw-logo{ height:70px!important; text-decoration:none!important;}
+.aysw-header .aysw-logo span{ text-decoration:none!important;}
+*//*===============================reset=================================*/
+
+/*html 5 reset start*/
+abbr,address,cite,code,del,dfn,ins,kbd,q,samp,small,sub,sup,var,b,i{margin:0;padding:0;font-size:100%;vertical-align:baseline;}
+section,article,aside,header,footer,nav,dialog,figure{display:block;}
+section{ margin-left:auto; margin-right:auto;}
+/*html 5 reset end*/
+
+*{ margin:0;padding:0;}
+body,input,textarea,button{ font:12px/18px "\5FAE\8F6F\96C5\9ED1", "Microsoft Yahei", tahoma, arial, "Hiragino Sans GB", "\5B8B\4F53"; color:#666666; word-wrap:break-word;}
+table{ border-collapse:collapse;}
+span{ vertical-align:baseline;}
+ol, ul, menu{list-style:none;}
+h1,h2,h3,h4,h5,h6{ font-size:14px; font-weight:bold;}
+dt{ font-weight:bold;}
+em{ font-style:normal;}
+a{ color:#0066cc; text-decoration:none;}
+a:hover{ text-decoration:underline;}
+img{ border:none;}
+a:focus,
+a:focus img,
+input:focus{ outline:0;}
+.clearfix{*zoom:1}
+.clearfix:before,.clearfix:after{display:table;content:""}
+.clearfix:after{clear:both}
+
+
+
+/*===============================base=================================*/
+/*float*/
+.fl{ float:left!important;}
+.fr{ float:right!important;}
+.fn{ float:none!important;}
+
+/*text*/
+.tal{ text-align:left!important;}
+.tar{ text-align:right!important;}
+.tac{ text-align:center!important;}
+.vat{ vertical-align:top!important;}
+.vam{ vertical-align:middle!important;}
+.ti2em{ text-indent:2em!important;}
+.tlf{table-layout:fixed!important;}
+.nowrap{ white-space:nowrap!important;; word-break:normal!important;}
+
+/*margin*/
+.m0{ margin:0!important;}
+.m5{ margin:5px!important;}
+.m10{ margin:10px!important;}
+.m15{ margin:15px!important;}
+.m20{ margin:20px!important;}
+.m25{ margin:25px!important;}
+.mt0{ margin-top:0px!important;}
+.mt5{ margin-top:5px!important;}
+.mt10{ margin-top:10px!important;}
+.mt15{ margin-top:15px!important;}
+.mt20{ margin-top:20px!important;}
+.mt25{ margin-top:25px!important;}
+.ml0{ margin-left:0px!important;}
+.ml5{ margin-left:5px!important;}
+.ml10{ margin-left:10px!important;}
+.ml15{ margin-left:15px!important;}
+.ml20{ margin-left:20px!important;}
+.ml25{ margin-left:25px!important;}
+.mb0{ margin-bottom:0px!important;}
+.mb5{ margin-bottom:5px!important;}
+.mb10{ margin-bottom:10px!important;}
+.mb15{ margin-bottom:15px!important;}
+.mb20{ margin-bottom:20px!important;}
+.mb25{ margin-bottom:25px!important;}
+.mr0{ margin-right:0px!important;}
+.mr5{ margin-right:5px!important;}
+.mr10{ margin-right:10px!important;}
+.mr15{ margin-right:15px!important;}
+.mr20{ margin-right:20px!important;}
+.mr25{ margin-right:25px!important;}
+	
+/*padding璋冭妭(鏍煎紡p[t,r,b,l][number])*/
+.p0{ padding:0px!important;}
+.p5{ padding:5px!important;}
+.p10{ padding:10px!important;}
+.p15{ padding:15px!important;}
+.p20{ padding:20px!important;}
+.p25{ padding:25px!important;}
+.pt0{ padding-top:0px!important;}
+.pt5{ padding-top:5px!important;}
+.pt10{ padding-top:10px!important;}
+.pt15{ padding-top:15px!important;}
+.pt20{ padding-top:20px!important;}
+.pt25{ padding-top:25px!important;}
+.pl0{ padding-left:0px!important;}
+.pl5{ padding-left:5px!important;}
+.pl10{ padding-left:10px!important;}
+.pl15{ padding-left:15px!important;}
+.pl20{ padding-left:20px!important;}
+.pl25{ padding-left:25px!important;}
+.pb0{ padding-bottom:0px!important;}
+.pb5{ padding-bottom:5px!important;}
+.pb10{ padding-bottom:10px!important;}
+.pb15{ padding-bottom:15px!important;}
+.pb20{ padding-bottom:20px!important;}
+.pb25{ padding-bottom:25px!important;}
+.pr0{ padding-right:0px!important;}
+.pr5{ padding-right:5px!important;}
+.pr10{ padding-right:10px!important;}
+.pr15{ padding-right:15px!important;}
+.pr20{ padding-right:20px!important;}
+.pr25{ padding-right:25px!important;}
+
+/*colors*/
+.orange{ color: #F60!important;}
+.gray{ color: #999!important;}
+.darkgray{ color:#666!important}
+.red{ color:#F00!important;}
+.blue{ color:#06C!important;}
+.green{ color:#390!important;}
+.black{ color:#000;}
